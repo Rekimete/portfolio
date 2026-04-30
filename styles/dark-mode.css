@@ -1,0 +1,289 @@
+/* ==========================================
+   DARK-MODE.CSS - Mode sombre (optionnel)
+   À activer par: <link rel="stylesheet" href="styles/dark-mode.css">
+   ========================================== */
+
+/* Variables pour le mode sombre */
+html.dark-mode {
+    --primary-color: #818cf8;
+    --secondary-color: #1e293b;
+    --accent-color: #f472b6;
+    --light-bg: #1f2937;
+    --dark-bg: #0f172a;
+    --text-dark: #f3f4f6;
+    --text-light: #d1d5db;
+    --border-color: #374151;
+}
+
+/* Appliquer le mode sombre au body */
+html.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--text-dark);
+}
+
+html.dark-mode body {
+    background-color: var(--dark-bg);
+    color: var(--text-dark);
+}
+
+/* Titres: contraste force en mode sombre */
+html.dark-mode h1,
+html.dark-mode h2,
+html.dark-mode h3,
+html.dark-mode h4,
+html.dark-mode h5,
+html.dark-mode h6,
+html.dark-mode .section-title,
+html.dark-mode .project-title,
+html.dark-mode .project-header h3,
+html.dark-mode .timeline-column-title,
+html.dark-mode .timeline-content h3,
+html.dark-mode .skill-category h3,
+html.dark-mode .about-goals h3,
+html.dark-mode .contact-info h3,
+html.dark-mode .contact-info-title,
+html.dark-mode .soft-skill-item h4 {
+    color: #f3f4f6 !important;
+}
+
+/* Rappeler le style gradient du titre hero pour garder sa lisibilite */
+html.dark-mode .hero-title {
+    background: linear-gradient(135deg, #a5b4fc 0%, #f9a8d4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Navbar */
+html.dark-mode .navbar {
+    background: rgba(15, 23, 42, 0.95);
+    border-bottom: 1px solid var(--border-color);
+}
+
+html.dark-mode .navbar.scrolled {
+    background: rgba(15, 23, 42, 0.98);
+}
+
+/* Menu mobile: eviter le fond clair en dark mode */
+html.dark-mode .nav-menu {
+    background-color: rgba(15, 23, 42, 0.98);
+}
+
+html.dark-mode .theme-toggle {
+    background: rgba(31, 41, 55, 0.85);
+    border-color: var(--border-color);
+}
+
+html.dark-mode .theme-track {
+    background: #374151;
+}
+
+html.dark-mode .theme-thumb {
+    background: #f8fafc;
+}
+
+/* Hero section */
+html.dark-mode .hero {
+    background: linear-gradient(135deg, var(--dark-bg), var(--secondary-color) 10%);
+}
+
+html.dark-mode .hero::before {
+    background: radial-gradient(circle, rgba(129, 140, 248, 0.15) 0%, transparent 70%);
+}
+
+html.dark-mode .hero::after {
+    background: radial-gradient(circle, rgba(244, 114, 182, 0.15) 0%, transparent 70%);
+}
+
+/* Sections */
+html.dark-mode .section {
+    background: var(--dark-bg);
+}
+
+html.dark-mode .about {
+    background: linear-gradient(135deg, var(--dark-bg), var(--secondary-color) 5%);
+}
+
+html.dark-mode .skills {
+    background: var(--dark-bg);
+}
+
+html.dark-mode .projects {
+    background: linear-gradient(135deg, var(--dark-bg), var(--secondary-color) 3%);
+}
+
+html.dark-mode .contact {
+    background: linear-gradient(135deg, var(--dark-bg), var(--secondary-color) 5%);
+}
+
+/* Cartes et conteneurs */
+html.dark-mode .skill-category,
+html.dark-mode .soft-skill-item,
+html.dark-mode .project-card,
+html.dark-mode .timeline-content,
+html.dark-mode .stat-card,
+html.dark-mode .about-goals {
+    background: var(--light-bg);
+    border-color: var(--border-color);
+    color: var(--text-dark);
+}
+
+html.dark-mode .skill-category h3,
+html.dark-mode .soft-skill-item h4,
+html.dark-mode .project-card h3,
+html.dark-mode .timeline-content h3,
+html.dark-mode .about-goals h3 {
+    color: var(--text-dark);
+}
+
+html.dark-mode .stat-card {
+    background: linear-gradient(135deg, #4f46e5, #d946ef);
+}
+
+html.dark-mode .project-card:hover {
+    border-color: var(--primary-color);
+}
+
+/* Etats interactifs: eviter le retour sur fond blanc */
+html.dark-mode .timeline-content:hover {
+    background: #111827;
+    border-color: var(--primary-color);
+}
+
+html.dark-mode .contact-item:hover {
+    background: #111827;
+}
+
+/* Formulaire */
+html.dark-mode .contact-form {
+    background: var(--light-bg);
+}
+
+html.dark-mode .form-group input,
+html.dark-mode .form-group textarea {
+    background: var(--dark-bg);
+    border-color: var(--border-color);
+    color: var(--text-dark);
+}
+
+html.dark-mode .form-group input:focus,
+html.dark-mode .form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.15);
+}
+
+html.dark-mode .contact-item {
+    background: var(--light-bg);
+    border-color: var(--primary-color);
+    color: var(--text-dark);
+}
+
+html.dark-mode .contact-item a {
+    color: var(--primary-color);
+}
+
+/* Boutons */
+html.dark-mode .btn-secondary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+html.dark-mode .btn-secondary:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Footer */
+html.dark-mode .footer {
+    background: var(--light-bg);
+    color: var(--text-light);
+    border-top: 1px solid var(--border-color);
+}
+
+html.dark-mode .footer p {
+    color: var(--text-light);
+}
+
+/* Scroll indicateur */
+html.dark-mode .scroll-indicator span {
+    color: var(--text-light);
+}
+
+html.dark-mode .chevron {
+    border-right-color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* Links */
+html.dark-mode a {
+    color: var(--primary-color);
+}
+
+html.dark-mode a:hover {
+    color: var(--accent-color);
+}
+
+/* Timeline */
+html.dark-mode .timeline::before {
+    background: linear-gradient(180deg, var(--primary-color), var(--accent-color), transparent);
+}
+
+html.dark-mode .timeline-marker {
+    background: var(--dark-bg);
+    border-color: var(--primary-color);
+}
+
+html.dark-mode .timeline-item:hover .timeline-marker {
+    background: var(--primary-color);
+    box-shadow: 0 0 0 8px rgba(129, 140, 248, 0.15);
+}
+
+/* Tags */
+html.dark-mode .skill-tag {
+    background: var(--dark-bg);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+html.dark-mode .skill-tag:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+html.dark-mode .tech-tag {
+    background: rgba(129, 140, 248, 0.1);
+    border-color: rgba(129, 140, 248, 0.3);
+}
+
+html.dark-mode .tech-tag:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Badge */
+html.dark-mode .project-badge {
+    background: var(--dark-bg);
+    color: var(--primary-color);
+}
+
+html.dark-mode .timeline-date {
+    background: rgba(129, 140, 248, 0.1);
+    color: var(--primary-color);
+}
+
+/* Lisibilité améliorée */
+html.dark-mode code {
+    background: var(--light-bg);
+    color: var(--primary-color);
+}
+
+html.dark-mode ul li::before {
+    color: var(--primary-color);
+}
+
+/* Transitions fluides */
+html.dark-mode * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+

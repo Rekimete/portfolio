@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aymé - Portfolio | Développeur Backend & Ingénieur Logiciel</title>
+
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navigation.css">
+    <link rel="stylesheet" href="styles/hero.css">
+    <link rel="stylesheet" href="styles/projects.css">
+    <link rel="stylesheet" href="styles/timeline.css">
+    <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/dark-mode.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <span class="logo-text">Aymé</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link" data-section="home">Accueil</a>
+                <a href="#about" class="nav-link" data-section="about">À propos</a>
+                <a href="#skills" class="nav-link" data-section="skills">Compétences</a>
+                <a href="#projects" class="nav-link" data-section="projects">Projets</a>
+                <a href="#experience" class="nav-link" data-section="experience">Expériences</a>
+                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+            </div>
+            <button id="darkModeToggle" class="theme-toggle" type="button" aria-label="Activer le mode sombre" aria-pressed="false">
+                <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+                <span class="theme-track" aria-hidden="true">
+                    <span class="theme-thumb"></span>
+                </span>
+                <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+            </button>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Accueil / Hero -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Aymé PIGNON</h1>
+            <p class="hero-subtitle">Développeur Java | DevOps Engineer</p>
+            <p class="hero-description">
+                Étudiant en Master 2 MIAGE (MBDS) | En fin d’alternance en septembre, je recherche un poste en CDI en Java ou DevOps<br>
+                Spécialisé en backend, microservices, architectures logicielles et infrastructure
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                <a href="#contact" class="btn btn-secondary">Me contacter</a>
+            </div>
+            <div class="scroll-indicator">
+                <span>Défiler pour explorer</span>
+                <div class="chevron"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">
+                        Je suis un étudiant de 23 ans en <strong>Master 2 MIAGE</strong> (option MBDS) à l'Université Côte d'Azur, actuellement en alternance et à la recherche d'un <strong>poste en CDI</strong> à partir de septembre.
+                    </p>
+                    <p>
+                        Je suis actuellement en <strong>alternance DevOps chez PRO BTP Groupe</strong> jusqu'en septembre 2026, ce qui m'a fortement intéressé et m'a permis d'approfondir mes connaissances en infrastructure, déploiement et automatisation.
+                    </p>
+                    <p>
+                        Je suis rigoureux, curieux, énergique et sociable, avec une forte capacité d'adaptation et une appétence pour les environnements techniques exigeants.
+                    </p>
+                    <div class="about-goals">
+                        <h3>Mes domaines de recherche</h3>
+                        <ul>
+                            <li>Développeur Java / Spring en CDI</li>
+                            <li>DevOps Engineer / Infrastructure en CDI</li>
+                            <li>Postes orientés architectures logicielles et systèmes distribués</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">23</span>
+                        <span class="stat-label">Ans</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">M2</span>
+                        <span class="stat-label">MIAGE</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">Ans d'expérience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Compétences -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <h2 class="section-title">Compétences Techniques</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Langages & Frameworks</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-tag">Java / Spring</span></li>
+                        <li><span class="skill-tag">Python / Django</span></li>
+                        <li><span class="skill-tag">PHP / Symfony</span></li>
+                        <li><span class="skill-tag">C++ / C#</span></li>
+                        <li><span class="skill-tag">HTML / CSS / JavaScript</span></li>
+                        <li><span class="skill-tag">Angular</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Données & Systèmes</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-tag">SQL</span></li>
+                        <li><span class="skill-tag">PostgreSQL</span></li>
+                        <li><span class="skill-tag">MongoDB</span></li>
+                        <li><span class="skill-tag">Modélisation</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps & Infrastructure</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-tag">Docker</span></li>
+                        <li><span class="skill-tag">Git / GitHub</span></li>
+                        <li><span class="skill-tag">CI/CD</span></li>
+                        <li><span class="skill-tag">Linux</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Cybersécurité</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-tag">SecNumacadémie</span></li>
+                        <li><span class="skill-tag">PIA (CNIL)</span></li>
+                        <li><span class="skill-tag">Sécurité Web</span></li>
+                        <li><span class="skill-tag">OWASP</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>IDE & Outils</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-tag">Pack JetBrains</span></li>
+                        <li><span class="skill-tag">Visual Studio Code</span></li>
+                        <li><span class="skill-tag">Suite Office</span></li>
+                        <li><span class="skill-tag">Google Workspace</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 class="section-title" style="margin-top: 4rem;">Qualités, Langues et Centres d'intérêt</h2>
+            <div class="soft-skills">
+                <div class="soft-skill-item">
+                    <h4>Qualités</h4>
+                    <ul class="soft-skill-list">
+                        <li>Rigoureux</li>
+                        <li>Curieux</li>
+                        <li>Énergique</li>
+                        <li>Sociable</li>
+                    </ul>
+                </div>
+                <div class="soft-skill-item">
+                    <h4>Langues</h4>
+                    <ul class="soft-skill-list">
+                        <li>Français (C2)</li>
+                        <li>Anglais (C1)</li>
+                    </ul>
+                </div>
+                <div class="soft-skill-item">
+                    <h4>Centres d'intérêt</h4>
+                    <ul class="soft-skill-list">
+                        <li>Volleyball</li>
+                        <li>Haltérophilie</li>
+                        <li>Moto</li>
+                        <li>Programmation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title">Mes Projets</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Projet Microservices</h3>
+                        <span class="project-badge">Architecture Java</span>
+                    </div>
+                    <p class="project-title">Jeu Loup-Garou en Microservices</p>
+                    <p class="project-description">
+                        Architecture complète en microservices avec développement du Gateway et services métier.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">Eureka</span>
+                        <span class="tech-tag">Feign Client</span>
+                        <span class="tech-tag">Microservices</span>
+                    </div>
+                    <p class="project-details">
+                        Gestion des communications inter-services, découverte de services dynamique, load balancing.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Projet DevOps</h3>
+                        <span class="project-badge">Infrastructure</span>
+                    </div>
+                    <p class="project-title">Pipeline DevOps & Déploiements</p>
+                    <p class="project-description">
+                        Gestion complète de pipeline CI/CD, migrations, déploiements et infrastructure en production.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Liquibase</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Git</span>
+                    </div>
+                    <p class="project-details">
+                        Suivi de validation, migrations de base de données, intégration continue et déploiement.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Projet IoT</h3>
+                        <span class="project-badge">Embarqué</span>
+                    </div>
+                    <p class="project-title">Système Connecté ESP32 + MQTT</p>
+                    <p class="project-description">
+                        Système de capteurs connectés avec communication MQTT et HTTP vers une plateforme centralisée.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">ESP32</span>
+                        <span class="tech-tag">MQTT</span>
+                        <span class="tech-tag">Node-RED</span>
+                        <span class="tech-tag">JSON</span>
+                    </div>
+                    <p class="project-details">
+                        OTA firmware updates, serveur web embarqué, envoi de données en JSON vers Node-RED.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Expériences -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <h2 class="section-title">Mon Parcours</h2>
+            <div class="timeline-layout">
+                <div class="timeline-column">
+                    <h3 class="timeline-column-title">Parcours scolaire & personnel</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Université Côte d'Azur - Master MIAGE (MBDS)</h3>
+                                <p class="timeline-date">2024 - 2026</p>
+                                <p class="timeline-description">
+                                    Formation de haut niveau en management informatique avec spécialisation MBDS (Mobility, Big Data and Systems). Approche transversale couvrant les architectures logicielles, les bases de données distribuées, les systèmes mobiles et l'analyse de données massives.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Engagement associatif - BDE MIAGE Nice</h3>
+                                <p class="timeline-date">2024 - 2025</p>
+                                <p class="timeline-description">
+                                    Responsable partenariat et pôle sport/e-sport : organisation d'événements
+                                    et coordination d'activités associatives.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Université Côte d'Azur - Licence MIASHS parcours MIAGE</h3>
+                                <p class="timeline-date">2023 - 2024</p>
+                                <p class="timeline-description">
+                                    Fondations en mathématiques appliquées, informatique, algorithmique et systèmes, avec orientation spécifique vers la gestion informatique pour l'administration et l'entreprise (MIAGE).
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>BTS SIO - Option SLAM (Lycée Bonaparte, Toulon)</h3>
+                                <p class="timeline-date">2021 - 2023</p>
+                                <p class="timeline-description">
+                                    Diplôme de niveau 5 en Services Informatiques aux Organisations, avec spécialisation SLAM (Solutions Logicielles et Applications Métier). Formation intensive couvrant le développement logiciel, l'algorithmique, les bases de données, la conception et la gestion de projets informatiques.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Baccalauréat Général (Lycée Rouvière, Toulon)</h3>
+                                <p class="timeline-date">2018 - 2021</p>
+                                <p class="timeline-description">
+                                    Baccalauréat Général avec options Mathématiques (spécialité Mathématiques Expertes), Numérique & Sciences Informatiques, offrant une base solide en mathématiques appliquées avancées et introduction aux fondamentaux de l'informatique et de la programmation.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="timeline-column">
+                    <h3 class="timeline-column-title">Parcours professionnel</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>PRO BTP Groupe - Alternant DevOps / Release Management au CTN de Cagnes-sur-Mer</h3>
+                                <p class="timeline-date">Sept. 2024 - Sept. 2026</p>
+                                <p class="timeline-description">
+                                    Intégré à l'équipe DevOps du CTN de Cagnes-sur-Mer, j'ai d'abord participé à la migration de la documentation technique d'IBM Connections vers Microsoft SharePoint.
+                                    J'ai ensuite rejoint l'équipe Release Management pour développer une application Java/Spring de suivi des pipelines CI/CD, avec le suivi des validations et des déploiements de composants et d'agrégats.
+                                    Dans ce projet CI/CD avec base de données PostgreSQL, j'ai utilisé Liquibase afin de faciliter les futures migrations de base de données.
+                                    Cette expérience m'a également permis de découvrir Liquibase ainsi que le socle d'entreprise.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Prolexia - Alternant Développeur Full Stack à La Seyne-sur-Mer</h3>
+                                <p class="timeline-date">Août 2023 - Août 2024</p>
+                                <p class="timeline-description">
+                                    Développement principalement d'IHMs à intégrer dans des applications réalisées en Qt C++ au sein de l'équipe développement logiciel.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Boulanger La Garde - Mise en rayon petit électroménager</h3>
+                                <p class="timeline-date">Juin 2023 - Août 2023</p>
+                                <p class="timeline-description">
+                                    Travail saisonnier d'été : mise en rayon et gestion des stocks de produits petit électroménager au magasin Boulanger de La Garde.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Études & Solutions - Stage développement logiciel à Toulon</h3>
+                                <p class="timeline-date">Janv. 2023 - Fév. 2023</p>
+                                <p class="timeline-description">
+                                    Stage de 2e année de BTS : développement d'une application Python embarquée destinée à être intégrée sur des cartes électroniques pour la gestion de luminaires en LiFi.
+                                    Architecture composée d'une carte mère et de cartes filles, avec un fonctionnement en edge computing, un luminaire mère jouant le rôle de fog computing, et une remontée des données vers un serveur global dans le cloud.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Fortil Groupe - Stage développement logiciel</h3>
+                                <p class="timeline-date">Mai 2022 - Juil. 2022</p>
+                                <p class="timeline-description">
+                                    Stage de 1re année de BTS au sein de l'équipe support du service informatique basée à La Seyne-sur-Mer.
+                                    Amélioration et nettoyage de l'outil de ticketing utilisé par l'équipe, avec des ajustements en direct pour optimiser l'environnement de travail.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Travaux de bâtiment - Rénovation de logements</h3>
+                                <p class="timeline-date">2018 - 2020 (été)</p>
+                                <p class="timeline-description">
+                                    Travaux d'été en rénovation d'intérieur : pose de placo, carrelage, préparation des murs avant peinture et mise en peinture.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Me Contacter</h2>
+
+            <div class="contact-content contact-content--info-only">
+                <div class="contact-info">
+                    <h3 class="contact-info-title">Informations de Contact</h3>
+                    <div class="contact-grid">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <p class="contact-label">Email</p>
+                            <a href="mailto:ayme.pignon@hotmail.com">ayme.pignon@hotmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">💼</span>
+                        <div>
+                            <p class="contact-label">LinkedIn</p>
+                            <a href="https://www.linkedin.com/in/aymé-pignon-636899228/" target="_blank">Mon profil LinkedIn</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">💻</span>
+                        <div>
+                            <p class="contact-label">GitHub</p>
+                            <a href="https://github.com/Rekimete" target="_blank">Mon GitHub</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📄</span>
+                        <div>
+                            <p class="contact-label">CV</p>
+                            <a href="#" download class="btn-small">Télécharger mon CV (PDF)</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Aymé. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/dark-mode.js"></script>
+</body>
+</html>
+
