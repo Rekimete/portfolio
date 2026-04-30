@@ -82,6 +82,76 @@ body {
 }
 
 /* ==========================================
+   SKILLS - amélioration UI/UX
+   ========================================== */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.skill-category {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    padding: 1.25rem 1.25rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.skill-category h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-list li {
+    list-style: none;
+    margin: 0;
+}
+
+/* override du marqueur global pour les listes de compétences */
+.skill-list li::before { content: none !important; }
+
+.skill-tag {
+    display: inline-block;
+    background: linear-gradient(90deg, rgba(99,102,241,0.08), rgba(236,72,153,0.06));
+    color: var(--primary-color);
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid rgba(99,102,241,0.08);
+    box-shadow: none;
+}
+
+/* petites améliorations responsive */
+@media (max-width: 768px) {
+    .skills-grid {
+        gap: 1rem;
+    }
+    .skill-category {
+        padding: 1rem;
+    }
+}
+
+
+/* ==========================================
    BOUTONS
    ========================================== */
 
@@ -179,17 +249,28 @@ a:hover {
 
 ul {
     list-style: none;
+    padding-left: 0; /* remove default indent */
 }
 
 ul li {
     margin-bottom: 0.5rem;
 }
 
+/* styled pseudo-bullet that stays vertically centered and aligned */
 ul li::before {
-    content: '▸ ';
+    content: '▸';
     color: var(--primary-color);
-    font-weight: bold;
+    font-weight: 700;
+    display: inline-block;
+    width: 1.1rem;
+    text-align: center;
     margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+/* Ensure skill lists don't show the global pseudo-bullet (override) */
+.skill-category ul li::before {
+    content: none !important;
 }
 
 /* ==========================================

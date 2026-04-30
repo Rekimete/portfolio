@@ -1,0 +1,12 @@
+.git
+.gitignore
+node_modules
+Dockerfile
+docker-compose.yml
+*.log
+.env
+.vscode
+__pycache__
+*.pyc
+.DS_Store
+
