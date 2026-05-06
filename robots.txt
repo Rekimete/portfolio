@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.example.com/sitemap.xml
+Sitemap: https://aymepignon.fr/sitemap.xml
 
 # If you have staging or admin paths, disallow them here, e.g.:
 # Disallow: /admin/
