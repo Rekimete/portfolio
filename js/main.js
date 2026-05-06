@@ -5,6 +5,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
     initializeScrollEffects();
+    initializeProjectsCarousel();
     initializeContactForm();
     initializeObserverAnimations();
 });
@@ -82,6 +83,105 @@ function initializeScrollEffects() {
 }
 
 /* ==========================================
+   CAROUSEL DES PROJETS
+   ========================================== */
+
+function initializeProjectsCarousel() {
+    const carousel = document.querySelector('[data-carousel="projects"]');
+
+    if (!carousel) return;
+
+    const track = carousel.querySelector('.projects-carousel-track');
+    const slides = Array.from(carousel.querySelectorAll('.project-slide'));
+    const prevButton = carousel.querySelector('.carousel-button-prev');
+    const nextButton = carousel.querySelector('.carousel-button-next');
+    const dotsContainer = document.querySelector('.projects-carousel-dots');
+
+    if (!track || slides.length === 0 || !prevButton || !nextButton || !dotsContainer) return;
+
+    let currentIndex = 0;
+
+    dotsContainer.innerHTML = '';
+
+    const dots = slides.map((slide, index) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'carousel-dot';
+        dot.setAttribute('aria-label', `Aller au projet ${index + 1}`);
+        dot.addEventListener('click', () => scrollToSlide(index));
+        dotsContainer.appendChild(dot);
+        return dot;
+    });
+
+    function getPreviousIndex(index) {
+        return (index - 1 + slides.length) % slides.length;
+    }
+
+    function getNextIndex(index) {
+        return (index + 1) % slides.length;
+    }
+
+    function updateCarouselState(index) {
+        currentIndex = ((index % slides.length) + slides.length) % slides.length;
+
+        const previousIndex = getPreviousIndex(currentIndex);
+        const nextIndex = getNextIndex(currentIndex);
+
+        dots.forEach((dot, dotIndex) => {
+            dot.classList.toggle('is-active', dotIndex === currentIndex);
+            dot.setAttribute('aria-current', dotIndex === currentIndex ? 'true' : 'false');
+        });
+
+        slides.forEach((slide, slideIndex) => {
+            slide.classList.remove('is-active', 'is-prev', 'is-next', 'is-hidden');
+
+            if (slideIndex === currentIndex) {
+                slide.classList.add('is-active');
+            } else if (slideIndex === previousIndex) {
+                slide.classList.add('is-prev');
+            } else if (slideIndex === nextIndex) {
+                slide.classList.add('is-next');
+            } else {
+                slide.classList.add('is-hidden');
+            }
+        });
+
+        prevButton.disabled = false;
+        nextButton.disabled = false;
+    }
+
+    function scrollToSlide(index) {
+        updateCarouselState(index);
+    }
+
+    prevButton.addEventListener('click', () => scrollToSlide(currentIndex - 1));
+    nextButton.addEventListener('click', () => scrollToSlide(currentIndex + 1));
+
+    track.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowLeft') {
+            event.preventDefault();
+            scrollToSlide(currentIndex - 1);
+        }
+
+        if (event.key === 'ArrowRight') {
+            event.preventDefault();
+            scrollToSlide(currentIndex + 1);
+        }
+    });
+
+    slides.forEach((slide, slideIndex) => {
+        slide.addEventListener('click', function() {
+            if (slideIndex !== currentIndex) {
+                scrollToSlide(slideIndex);
+            }
+        });
+    });
+
+    track.setAttribute('tabindex', '0');
+    updateCarouselState(0);
+}
+
+/* ==========================================
    FORMULAIRE DE CONTACT
    ========================================== */
 
@@ -98,12 +198,6 @@ function initializeContactForm() {
             return;
         }
 
-        // Récupérer les données
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            message: document.getElementById('message').value
-        };
 
         // Afficher un message de succès (à remplacer par une vraie soumission)
         showFormSuccess();

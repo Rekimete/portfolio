@@ -218,67 +218,87 @@
     <section id="projects" class="section projects">
         <div class="container">
             <h2 class="section-title">Mes Projets</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Projet Microservices</h3>
-                        <span class="project-badge">Architecture Java</span>
+            <div class="projects-carousel" data-carousel="projects">
+                <button class="carousel-button carousel-button-prev" type="button" aria-label="Projet précédent">
+                    ‹
+                </button>
+
+                <div class="projects-carousel-viewport">
+                    <div class="projects-carousel-track">
+                        <div class="project-slide">
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h3>Projet Microservices</h3>
+                                    <span class="project-badge">Architecture Java</span>
+                                </div>
+                                <p class="project-title">Jeu Loup-Garou en Microservices</p>
+                                <p class="project-description">
+                                    Architecture complète en microservices avec développement du Gateway et services métier.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Spring Boot</span>
+                                    <span class="tech-tag">Eureka</span>
+                                    <span class="tech-tag">Feign Client</span>
+                                    <span class="tech-tag">Microservices</span>
+                                </div>
+                                <p class="project-details">
+                                    Gestion des communications inter-services, découverte de services dynamique, load balancing.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="project-slide">
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h3>Projet DevOps</h3>
+                                    <span class="project-badge">Infrastructure</span>
+                                </div>
+                                <p class="project-title">Pipeline DevOps & Déploiements</p>
+                                <p class="project-description">
+                                    Gestion complète de pipeline CI/CD, migrations, déploiements et infrastructure en production.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Docker</span>
+                                    <span class="tech-tag">Liquibase</span>
+                                    <span class="tech-tag">PostgreSQL</span>
+                                    <span class="tech-tag">Git</span>
+                                </div>
+                                <p class="project-details">
+                                    Suivi de validation, migrations de base de données, intégration continue et déploiement.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="project-slide">
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h3>Projet IoT</h3>
+                                    <span class="project-badge">Embarqué</span>
+                                </div>
+                                <p class="project-title">Système Connecté ESP32 + MQTT</p>
+                                <p class="project-description">
+                                    Système de capteurs connectés avec communication MQTT et HTTP vers une plateforme centralisée.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">ESP32</span>
+                                    <span class="tech-tag">MQTT</span>
+                                    <span class="tech-tag">Node-RED</span>
+                                    <span class="tech-tag">JSON</span>
+                                </div>
+                                <p class="project-details">
+                                    OTA firmware updates, serveur web embarqué, envoi de données en JSON vers Node-RED.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <p class="project-title">Jeu Loup-Garou en Microservices</p>
-                    <p class="project-description">
-                        Architecture complète en microservices avec développement du Gateway et services métier.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Spring Boot</span>
-                        <span class="tech-tag">Eureka</span>
-                        <span class="tech-tag">Feign Client</span>
-                        <span class="tech-tag">Microservices</span>
-                    </div>
-                    <p class="project-details">
-                        Gestion des communications inter-services, découverte de services dynamique, load balancing.
-                    </p>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Projet DevOps</h3>
-                        <span class="project-badge">Infrastructure</span>
-                    </div>
-                    <p class="project-title">Pipeline DevOps & Déploiements</p>
-                    <p class="project-description">
-                        Gestion complète de pipeline CI/CD, migrations, déploiements et infrastructure en production.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Docker</span>
-                        <span class="tech-tag">Liquibase</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">Git</span>
-                    </div>
-                    <p class="project-details">
-                        Suivi de validation, migrations de base de données, intégration continue et déploiement.
-                    </p>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Projet IoT</h3>
-                        <span class="project-badge">Embarqué</span>
-                    </div>
-                    <p class="project-title">Système Connecté ESP32 + MQTT</p>
-                    <p class="project-description">
-                        Système de capteurs connectés avec communication MQTT et HTTP vers une plateforme centralisée.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">ESP32</span>
-                        <span class="tech-tag">MQTT</span>
-                        <span class="tech-tag">Node-RED</span>
-                        <span class="tech-tag">JSON</span>
-                    </div>
-                    <p class="project-details">
-                        OTA firmware updates, serveur web embarqué, envoi de données en JSON vers Node-RED.
-                    </p>
-                </div>
+                <button class="carousel-button carousel-button-next" type="button" aria-label="Projet suivant">
+                    ›
+                </button>
             </div>
+
+            <div class="projects-carousel-dots" aria-label="Navigation du carousel des projets"></div>
         </div>
     </section>
 
@@ -357,10 +377,9 @@
                                 <h3>PRO BTP Groupe - Alternant DevOps / Release Management au CTN de Cagnes-sur-Mer</h3>
                                 <p class="timeline-date">Sept. 2024 - Sept. 2026</p>
                                 <p class="timeline-description">
-                                    Intégré à l'équipe DevOps du CTN de Cagnes-sur-Mer, j'ai d'abord participé à la migration de la documentation technique d'IBM Connections vers Microsoft SharePoint.
-                                    J'ai ensuite rejoint l'équipe Release Management pour développer une application Java/Spring de suivi des pipelines CI/CD, avec le suivi des validations et des déploiements de composants et d'agrégats.
-                                    Dans ce projet CI/CD avec base de données PostgreSQL, j'ai utilisé Liquibase afin de faciliter les futures migrations de base de données.
-                                    Cette expérience m'a également permis de découvrir Liquibase ainsi que le socle d'entreprise.
+                                    Intégré à l'équipe DevOps du CTN de Cagnes-sur-Mer, j'ai commencé par contribuer à la migration de la documentation technique d'IBM Connections vers Microsoft SharePoint.
+                                    J'ai ensuite rejoint l'équipe Release Management, où j'ai participé au développement d'une application Java/Spring dédiée au suivi des pipelines CI/CD — permettant de tracer les validations et les déploiements de composants et d'agrégats tout au long du cycle de livraison.
+                                    Ce projet m'a également amené à travailler avec PostgreSQL comme base de données, et à prendre en main Liquibase pour gérer les évolutions de schéma de façon structurée et reproductible. Une belle opportunité de découvrir cet outil, ainsi que le socle technique de l'entreprise dans son ensemble.
                                 </p>
                             </div>
                         </div>

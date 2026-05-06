@@ -193,11 +193,133 @@
    SECTION PROJETS
    ========================================== */
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-    gap: 2.5rem;
+.projects-carousel {
+    position: relative;
     margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.projects-carousel-viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.projects-carousel-track {
+    position: relative;
+    width: 100%;
+    min-height: clamp(34rem, 52vw, 38rem);
+    padding: 2rem 0;
+    perspective: 1200px;
+}
+
+.project-slide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(74vw, 28rem);
+    box-sizing: border-box;
+    transform-origin: center center;
+    transition: transform 0.45s ease, opacity 0.45s ease, filter 0.45s ease;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    filter: blur(2px) saturate(0.85);
+    z-index: 1;
+}
+
+.project-slide.is-active {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 1;
+    pointer-events: auto;
+    filter: none;
+    z-index: 3;
+}
+
+.project-slide.is-prev {
+    transform: translate(calc(-50% - clamp(10rem, 24vw, 18rem)), -50%) scale(0.9) rotateY(8deg);
+    opacity: 0.56;
+    pointer-events: auto;
+    z-index: 2;
+}
+
+.project-slide.is-next {
+    transform: translate(calc(-50% + clamp(10rem, 24vw, 18rem)), -50%) scale(0.9) rotateY(-8deg);
+    opacity: 0.56;
+    pointer-events: auto;
+    z-index: 2;
+}
+
+.project-slide.is-hidden {
+    transform: translate(-50%, -50%) scale(0.72);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.carousel-button {
+    flex: 0 0 auto;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    font-size: 1.75rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    z-index: 2;
+}
+
+.carousel-button:hover:not(:disabled) {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+.carousel-button:focus-visible {
+    outline: 3px solid rgba(99, 102, 241, 0.35);
+    outline-offset: 3px;
+}
+
+.carousel-button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.projects-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.65rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.carousel-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 999px;
+    border: 0;
+    background: rgba(99, 102, 241, 0.25);
+    cursor: pointer;
+    padding: 0;
+    transition: var(--transition);
+}
+
+.carousel-dot:hover {
+    background: rgba(99, 102, 241, 0.5);
+    transform: scale(1.15);
+}
+
+.carousel-dot.is-active {
+    width: 2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
 }
 
 .project-card {
@@ -210,6 +332,8 @@
     overflow: hidden;
     position: relative;
     animation: fadeInUp 0.6s ease-out forwards;
+    height: 100%;
+    min-height: 27rem;
 }
 
 .project-card:nth-child(1) { animation-delay: 0s; }
@@ -326,8 +450,31 @@
         grid-template-columns: 1fr;
     }
 
-    .projects-grid {
-        grid-template-columns: 1fr;
+    .projects-carousel {
+        gap: 0.75rem;
+    }
+
+    .projects-carousel-track {
+        min-height: clamp(33rem, 94vw, 38rem);
+        padding: 1.25rem 0;
+    }
+
+    .project-slide {
+        width: min(82vw, 25rem);
+    }
+
+    .project-slide.is-prev {
+        transform: translate(calc(-50% - 56vw), -50%) scale(0.82);
+    }
+
+    .project-slide.is-next {
+        transform: translate(calc(-50% + 56vw), -50%) scale(0.82);
+    }
+
+    .carousel-button {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.5rem;
     }
 
     .soft-skills {
@@ -349,6 +496,36 @@
 
     .project-badge {
         align-self: flex-start;
+    }
+
+    .projects-carousel {
+        gap: 0.5rem;
+    }
+
+    .projects-carousel-track {
+        min-height: clamp(31rem, 108vw, 36rem);
+    }
+
+    .project-slide {
+        width: min(88vw, 22rem);
+    }
+
+    .project-card {
+        min-height: 25rem;
+        padding: 1.5rem;
+    }
+
+    .carousel-button {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    .projects-carousel-dots {
+        gap: 0.45rem;
+    }
+
+    .carousel-dot.is-active {
+        width: 1.5rem;
     }
 }
 
