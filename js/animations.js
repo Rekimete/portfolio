@@ -1,3 +1,4 @@
+
 /* ==========================================
    ANIMATIONS.JS - Animations légères et interactions
    ========================================== */
@@ -9,36 +10,30 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* ==========================================
-   EFFET PARALLAX SUBTLE
+   PARALLAX EFFECT
    ========================================== */
 
 function initializeParallaxEffect() {
     window.addEventListener('scroll', function() {
         const scrollPosition = window.scrollY;
         const heroSection = document.querySelector('.hero');
-        
         if (heroSection) {
-            // Faire remonter le hero légèrement plus vite que le scroll pour éviter le chevauchement
-            // avec la section suivante.
             heroSection.style.transform = `translate3d(0, ${-scrollPosition * 0.18}px, 0)`;
         }
     });
 }
 
 /* ==========================================
-   INTERACTIONS AU SURVOL DES CARTES
+   ELEMENT HOVERS
    ========================================== */
 
 function initializeElementHovers() {
-    // Cartes de projets
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transition = 'all 0.3s ease';
         });
     });
-
-    // Catégories de compétences
     const skillCategories = document.querySelectorAll('.skill-category');
     skillCategories.forEach(category => {
         category.addEventListener('mouseenter', function() {
@@ -50,7 +45,6 @@ function initializeElementHovers() {
                 }, index * 50);
             });
         });
-
         category.addEventListener('mouseleave', function() {
             const skillTags = this.querySelectorAll('.skill-tag');
             skillTags.forEach(tag => {
@@ -58,8 +52,6 @@ function initializeElementHovers() {
             });
         });
     });
-
-    // Éléments de timeline
     const timelineItems = document.querySelectorAll('.timeline-item');
     timelineItems.forEach(item => {
         item.addEventListener('mouseenter', function() {
@@ -68,7 +60,6 @@ function initializeElementHovers() {
                 marker.style.animation = 'pulse 1.5s ease-in-out';
             }
         });
-
         item.addEventListener('mouseleave', function() {
             const marker = this.querySelector('.timeline-marker');
             if (marker) {
@@ -76,8 +67,6 @@ function initializeElementHovers() {
             }
         });
     });
-
-    // Badges de technologies
     const techTags = document.querySelectorAll('.tech-tag');
     techTags.forEach((tag, index) => {
         tag.style.animationDelay = `${index * 0.05}s`;
@@ -85,14 +74,12 @@ function initializeElementHovers() {
 }
 
 /* ==========================================
-   INDICATEUR DE SCROLL
+   SCROLL INDICATOR
    ========================================== */
 
 function initializeScrollIndicator() {
     const scrollIndicator = document.querySelector('.scroll-indicator');
-    
     if (!scrollIndicator) return;
-
     window.addEventListener('scroll', function() {
         if (window.scrollY > 100) {
             scrollIndicator.style.opacity = '0';
@@ -104,27 +91,18 @@ function initializeScrollIndicator() {
             scrollIndicator.style.transition = 'opacity 0.3s ease';
         }
     });
-
-    // Clic sur l'indicateur de scroll
     scrollIndicator.addEventListener('click', function() {
-        window.scrollTo({
-            top: window.innerHeight,
-            behavior: 'smooth'
-        });
+        window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
     });
 }
 
 /* ==========================================
-   COMPTEURS ANIMÉS (pour les stats)
+   COUNTERS
    ========================================== */
 
 function animateCounters() {
     const statNumbers = document.querySelectorAll('.stat-number');
-    
-    const counterOptions = {
-        threshold: 0.5,
-    };
-
+    const counterOptions = { threshold: 0.5 };
     const counterObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
@@ -133,40 +111,26 @@ function animateCounters() {
             }
         });
     }, counterOptions);
-
-    statNumbers.forEach(number => {
-        counterObserver.observe(number);
-    });
+    statNumbers.forEach(number => counterObserver.observe(number));
 }
 
 function animateCounter(element) {
     const finalValue = element.textContent;
     const isNumeric = /^\d+$/.test(finalValue);
-    
     if (!isNumeric) return;
-
     const startValue = 0;
-    const duration = 2000; // 2 secondes
+    const duration = 2000;
     const startTime = Date.now();
-
     function updateCounter() {
         const elapsed = Date.now() - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        const currentValue = Math.floor(startValue + (finalValue - startValue) * progress);
-        
-        element.textContent = currentValue;
-
-        if (progress < 1) {
-            requestAnimationFrame(updateCounter);
-        } else {
-            element.textContent = finalValue;
-        }
+        element.textContent = Math.floor(startValue + (finalValue - startValue) * progress);
+        if (progress < 1) requestAnimationFrame(updateCounter);
+        else element.textContent = finalValue;
     }
-
     updateCounter();
 }
 
-// Appeler la fonction de compteurs au chargement
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', animateCounters);
 } else {
@@ -174,12 +138,11 @@ if (document.readyState === 'loading') {
 }
 
 /* ==========================================
-   RIPPLE EFFECT SUR LES BOUTONS
+   RIPPLE EFFECT
    ========================================== */
 
 function initializeRippleEffect() {
     const buttons = document.querySelectorAll('.btn');
-
     buttons.forEach(button => {
         button.addEventListener('click', function(e) {
             const ripple = document.createElement('span');
@@ -187,20 +150,16 @@ function initializeRippleEffect() {
             const size = Math.max(rect.width, rect.height);
             const x = e.clientX - rect.left - size / 2;
             const y = e.clientY - rect.top - size / 2;
-
             ripple.style.width = ripple.style.height = size + 'px';
             ripple.style.left = x + 'px';
             ripple.style.top = y + 'px';
             ripple.classList.add('ripple');
-
             button.appendChild(ripple);
-
             setTimeout(() => ripple.remove(), 600);
         });
     });
 }
 
-// Initialiser les effets de ripple
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializeRippleEffect);
 } else {
@@ -208,23 +167,16 @@ if (document.readyState === 'loading') {
 }
 
 /* ==========================================
-   ANIMATIONS AU SCROLL (LAZY LOAD)
+   LAZY ANIMATIONS
    ========================================== */
 
 function initializeLazyAnimations() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('in-view');
-            }
+            if (entry.isIntersecting) entry.target.classList.add('in-view');
         });
-    }, {
-        threshold: 0.1
-    });
-
-    document.querySelectorAll('.skill-category, .project-card, .timeline-item').forEach(el => {
-        observer.observe(el);
-    });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.skill-category, .project-card, .timeline-item').forEach(el => observer.observe(el));
 }
 
 if (document.readyState === 'loading') {
