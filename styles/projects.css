@@ -195,7 +195,7 @@
 
 .projects-carousel {
     position: relative;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -209,7 +209,7 @@
 .projects-carousel-track {
     position: relative;
     width: 100%;
-    min-height: clamp(34rem, 52vw, 38rem);
+    min-height: clamp(42rem, 65vw, 50rem);
     padding: 2rem 0;
     perspective: 1200px;
 }
@@ -333,7 +333,35 @@
     position: relative;
     animation: fadeInUp 0.6s ease-out forwards;
     height: 100%;
-    min-height: 27rem;
+    min-height: 32rem;
+    max-height: 38rem;
+}
+
+/* Scrollbar only on active card */
+.project-slide.is-active .project-card {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(99, 102, 241, 0.5) transparent;
+}
+
+/* Webkit scrollbar styling (Chrome, Safari, Edge) */
+.project-slide.is-active .project-card::-webkit-scrollbar {
+    width: 8px;
+}
+
+.project-slide.is-active .project-card::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.project-slide.is-active .project-card::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.project-slide.is-active .project-card::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--accent-color), var(--primary-color));
+    box-shadow: 0 0 6px rgba(99, 102, 241, 0.3);
 }
 
 .project-card:nth-child(1) { animation-delay: 0s; }
@@ -455,7 +483,7 @@
     }
 
     .projects-carousel-track {
-        min-height: clamp(33rem, 94vw, 38rem);
+        min-height: clamp(38rem, 100vw, 44rem);
         padding: 1.25rem 0;
     }
 
@@ -503,7 +531,7 @@
     }
 
     .projects-carousel-track {
-        min-height: clamp(31rem, 108vw, 36rem);
+        min-height: clamp(35rem, 110vw, 40rem);
     }
 
     .project-slide {
@@ -511,7 +539,8 @@
     }
 
     .project-card {
-        min-height: 25rem;
+        min-height: 30rem;
+        max-height: 36rem;
         padding: 1.5rem;
     }
 

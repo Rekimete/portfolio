@@ -52,13 +52,13 @@ body {
 }
 
 .section {
-    padding: 6rem 0;
+    padding: 4rem 0;
 }
 
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     text-align: center;
     position: relative;
     color: var(--text-dark);
