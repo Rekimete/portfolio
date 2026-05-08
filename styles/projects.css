@@ -5,22 +5,37 @@
 /* Section À propos */
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 1rem 4rem;
     margin-top: 2rem;
 }
 
-.about-text p {
-    margin-bottom: 1.5rem;
+.about-text {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.about-stats {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .about-goals {
+    grid-column: 1 / -1;
+    grid-row: 2;
     margin-top: 2rem;
     padding: 2rem;
     background: var(--light-bg);
     border-radius: 0.75rem;
     border-left: 4px solid var(--primary-color);
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
 }
 
 .about-goals h3 {
@@ -31,12 +46,6 @@
     padding: 0.5rem 0;
     font-weight: 500;
     color: var(--text-dark);
-}
-
-.about-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
 }
 
 .stat-card {
@@ -466,12 +475,15 @@
 
 @media (max-width: 768px) {
     .about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
     }
 
     .about-stats {
-        grid-template-columns: 1fr;
+        flex-direction: row;
+        justify-content: center;
+        order: -1;
     }
 
     .skills-grid {

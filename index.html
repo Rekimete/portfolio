@@ -104,12 +104,14 @@
                 Spécialisé en backend, microservices, architectures logicielles et infrastructure
             </p>
             <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">Voir mes projets</a>
-                <a href="#contact" class="btn btn-secondary">Me contacter</a>
-            </div>
-            <div class="scroll-indicator">
-                <span>Défiler pour explorer</span>
-                <div class="chevron"></div>
+                <div class="btn-row">
+                    <a href="#projects" class="btn btn-primary hero-projects-btn">Mes projets</a>
+                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                </div>
+                <div class="scroll-indicator">
+                    <span>Voir la suite</span>
+                    <span class="scroll-arrow" aria-hidden="true">↓</span>
+                </div>
             </div>
         </div>
     </section>
@@ -118,6 +120,20 @@
         <div class="container">
             <h2 class="section-title">À propos de moi</h2>
             <div class="about-content">
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">23</span>
+                        <span class="stat-label">Ans</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">M2</span>
+                        <span class="stat-label">MIAGE</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">Ans d'expérience</span>
+                    </div>
+                </div>
                 <div class="about-text">
                     <p class="lead">
                         Je suis un étudiant de 23 ans en <strong>Master 2 MIAGE</strong> (option MBDS) à l'Université Côte d'Azur, actuellement en alternance et à la recherche d'un <strong>poste en CDI</strong> à partir de septembre.
@@ -135,20 +151,6 @@
                             <li>Développeur Java / Spring en CDI</li>
                             <li>Postes orientés architectures logicielles et systèmes distribués</li>
                         </ul>
-                    </div>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <span class="stat-number">23</span>
-                        <span class="stat-label">Ans</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">M2</span>
-                        <span class="stat-label">MIAGE</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">3+</span>
-                        <span class="stat-label">Ans d'expérience</span>
                     </div>
                 </div>
             </div>
@@ -237,7 +239,7 @@
                 </div>
             </div>
 
-            <h2 class="section-title" style="margin-top: 4rem;">Qualités, Langues et Centres d'intérêt</h2>
+            <h2 class="section-title mt-4">Qualités, Langues et Centres d'intérêt</h2>
             <div class="soft-skills">
                 <div class="soft-skill-item">
                     <h4>Qualités</h4>
@@ -259,7 +261,7 @@
                     <h4>Centres d'intérêt</h4>
                     <ul class="soft-skill-list">
                         <li>Volleyball</li>
-                        <li>Haltérophilie</li>
+                        <li>Musculation</li>
                         <li>Moto</li>
                         <li>Programmation</li>
                     </ul>
@@ -270,7 +272,7 @@
 
     <section id="projects" class="section projects">
         <div class="container">
-            <h2 class="section-title">Mes Projets</h2>
+            <h2 class="section-title section-title--projects">Mes Projets</h2>
             <div class="projects-carousel" data-carousel="projects">
                 <button class="carousel-button carousel-button-prev" type="button" aria-label="Projet précédent">
                     ‹
