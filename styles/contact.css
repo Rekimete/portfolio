@@ -165,6 +165,12 @@
     color: white;
 }
 
+.contact-item .btn-small[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 /* ==========================================
    ÉTAT DU FORMULAIRE
    ========================================== */
